@@ -1,12 +1,14 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 # Create your views here.
 def index(request):
-    return HttpResponse("<h4>Главная страница с информацией</h4>")
+    return render(request, "main/index.html")
+
 
 def readers(request):
-    return HttpResponse("<h4>Тут будут отображены читатели и выданные/взятые ими книги</h4>")
+    return render(request, "main/readers.html")
+
 
 def books(request):
-    return HttpResponse("<h4>Тут будут отображены книги, которые нужно закупить и кто просил это сделать</h4>")
+    return render(request, "main/books.html")
