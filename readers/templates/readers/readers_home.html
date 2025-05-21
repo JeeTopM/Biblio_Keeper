@@ -1,17 +1,26 @@
 {% extends 'main/layout.html' %}
 
 {% block title %}Читатели{% endblock %}
-
 {% block content %}
     <div class="feauters">
         <h1>Книговорот в природе</h1>
+        <a href="{% url 'create_readers' %}" class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить запись</a>
         {% if readers %}
             {% for history in readers %}
-                <div class="alert alert-warning">
-                    <h3>{{ history.reader }}</h3>
-                    <p>{{ history.operation }}</p>
-                    <p>{{ history.book_list }}</p>
-                    <p>{{ history.date }}</p>
+                {% if history.operation == 'Принять' %}
+                    <div class="alert alert-success">
+                        <h3>{{ history.reader }}</h3>
+                        <p>{{ history.operation }}</p>
+                        <p>{{ history.book_list }}</p>
+                        <p>{{ history.date }}</p>
+                {% else %}
+                    <div class="alert alert-warning">
+                        <h3>{{ history.reader }}</h3>
+                        <p>{{ history.operation }}</p>
+                        <p>{{ history.book_list }}</p>
+                        <p>{{ history.date }}</p>
+                    </div>
+                {% endif %}
                 </div>
             {% endfor %}
         {% else %}

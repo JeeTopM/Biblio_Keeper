@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Форма добавления книговыдачи{% endblock %}
+{% block content %}
+    <div class="feauters">
+        <h1>Форма добавления книговыдачи</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.reader }}<br>
+            {{ form.operation }}<br>
+            {{ form.book_list }}<br>
+            <span>{{ error }}</span>
+            <button class="btn btn-success" type="submit">Добавить запись</button>
+        </form>
+    </div>
+{% endblock %}

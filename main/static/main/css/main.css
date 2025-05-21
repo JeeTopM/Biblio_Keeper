@@ -88,3 +88,16 @@ aside a:hover, aside ul li a:hover {
     margin: 20px auto;
     text-align: center;
 }
+.alert-success {
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.btn-info {
+    display: block;
+    font-size: 18px;
+    width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
