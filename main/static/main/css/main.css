@@ -15,16 +15,19 @@ aside {
 aside img {
     width: 210px;
     float: left;
+    margin-bottom: 20px;
 }
 
 aside .logo {
-    font-size: 20px;
+    font-size: 23px;
+    text-align: center;
     font-weight: bold;
     position: relative;
 }
 
 aside h3 {
-    margin-top: 50px;
+    margin-top: 20px;
+    text-align: center;
     font-size: 30px;
 }
 
