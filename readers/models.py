@@ -11,15 +11,15 @@ from django.db import models
 
 class Articles(models.Model):
     OPERATION_CHOICES = [
-        ("take", "Взять"),
-        ("return", "Сдать"),
+        ("Взять", "take"),
+        ("Сдать", "return"),
     ]
     reader = models.CharField("Номер читателя или ФИО", max_length=50)
     operation = models.CharField(
         "Операция",
         max_length=10,
         choices=OPERATION_CHOICES,
-        default="take",
+        default="Взять",
     )
     book_list = models.TextField("Штрихкоды книг")
     date = models.DateTimeField("Дата операции", auto_now_add=True)
@@ -28,5 +28,5 @@ class Articles(models.Model):
         return self.reader
 
     class Meta:
-        verbose_name = 'изменение книговыдачи'
-        verbose_name_plural = 'изменения книговыдачи'
+        verbose_name = "изменение книговыдачи"
+        verbose_name_plural = "изменения книговыдачи"
