@@ -1,0 +1,70 @@
+body {
+    background: #FCBAD3;
+}
+
+aside {
+    float: left;
+    background: #AA96DA;
+    width: 20%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #ffffd2;
+    border-right: 5px solid #90518b;
+}
+
+aside img {
+    width: 210px;
+    float: left;
+}
+
+aside .logo {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+}
+
+aside h3 {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-top: 20px;
+}
+
+aside a, aside ul li a {
+    color: #ffffd2;
+    text-decoration: none !important;
+    display: block;
+    font-size: 13px;
+    transition: transform 0.6s ease;
+}
+
+aside a:hover, aside ul li a:hover {
+    color: #a8d8ea;
+    text-decoration: none !important;
+    transform: scale(1.05);
+}
+
+main .feauters {
+    float: left;
+    color: #2b2e4a;
+    margin-top: 20px;
+    text-align: center;
+    width: 75%;
+}
+
+main .feauters h1 {
+    font-size: 50px;
+}
+
+main .feauters p {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
