@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Читатели{% endblock %}
+
+{% block content %}
+    <div class="feauters">
+        <h1>Книговорот в природе</h1>
+        <p>Возврат / Выдача</p>
+        <button class="btn btn-primary">{% filter upper %}Главная страница{% endfilter %}</button>
+        <button class="btn btn-primary">{% filter upper %}Заявка на закупку{% endfilter %}</button>
+    </div>
+{% endblock %}
