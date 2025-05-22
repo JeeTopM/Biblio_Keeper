@@ -6,12 +6,6 @@ def index(request):
     data = {"title": "Главная страница"}
     return render(request, "main/index.html", data)
 
-
-def readers(request):
-    data = {"title": "Очень нужна книга"}
-    return render(request, "main/readers.html", data)
-
-
 def books(request):
     data = {'title': 'Работа с читателем, запись'}
     return render(request, "main/books.html", data)

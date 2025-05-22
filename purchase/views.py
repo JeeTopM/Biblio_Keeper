@@ -5,30 +5,30 @@ from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 # Create your views here.
-def readers_home(request):
-    readers = Articles.objects.all()  # добавить срез [:5]
-    return render(request, "readers/readers_home.html", {"readers": readers})
+def purchase_home(request):
+    purchase = Articles.objects.all()
+    return render(request, "purchase/purchase_home.html", {"purchase": purchase})
 
 
-class ReadersDetailView(DetailView):
+class PurchaseDetailView(DetailView):
     model = Articles
-    template_name = "readers/details_create_readers.html"
+    template_name = "purchase/details_create_purchase.html"
     context_object_name = "article"
 
 
-class ReadersUpdateView(UpdateView):
+class PurchaseUpdateView(UpdateView):
     model = Articles
-    template_name = "readers/create_readers.html"
+    template_name = "purchase/create_purchase.html"
     form_class = ArticlesForm
 
 
-class ReadersDeleteView(DeleteView):
+class PurchaseDeleteView(DeleteView):
     model = Articles
-    success_url = "/readers/"
-    template_name = "readers/readers-delete.html"
+    success_url = "/purchase/"
+    template_name = "purchase/purchase_delete.html"
 
 
-def create_readers(request):
+def create_purchase(request):
     error = ""
     if request.method == "POST":
         form = ArticlesForm(request.POST)
@@ -40,4 +40,4 @@ def create_readers(request):
 
     form = ArticlesForm()
     data = {"form": form, "error": error}
-    return render(request, "readers/create_readers.html", data)
+    return render(request, "purchase/create_purchase.html", data)

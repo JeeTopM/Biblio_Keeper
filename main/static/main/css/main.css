@@ -1,43 +1,62 @@
 body {
-    background: #f9f7f7;
+    position: relative;
     margin: 0;
     padding: 0;
     display: flex;
     min-height: 100vh;
+    color: #544c84;
+    font-family: Arial, sans-serif;
+}
+
+/* Фоновое изображение с затемнением */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f9f7f7 url('/static/main/img/171.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: brightness(0.7); /* Затемнение изображения */
+    z-index: -1;
+}
+
+/* Основной контент с полупрозрачной подложкой */
+main {
+    flex: 1;
+    padding: 2.5%;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-left: 20%; /* Учитываем ширину aside */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 aside {
-    background: #7a539b;
+    background: rgba(122, 83, 155, 0.9); /* Полупрозрачный фон */
     width: 20%;
     padding: 2.5%;
     color: #d3d559;
     border-right: 5px solid #544c84;
-    overflow-y: auto;
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
     height: 100vh;
     box-sizing: border-box;
+    z-index: 10;
+    backdrop-filter: blur(5px); /* Эффект размытия для модного стеклянного эффекта */
 }
-
-main {
-    flex: 1;
-    padding: 2.5%;
-    color: #544c84;
-    overflow-y: auto;
-}
-
 
 aside img {
     width: 210px;
-    float: left;
-    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto 20px;
 }
 
 aside .logo {
-    font-size: 23px;
+    font-size: 22px;
     text-align: center;
     font-weight: bold;
-    position: relative;
+    margin-bottom: 30px;
 }
 
 aside h3 {
@@ -52,52 +71,61 @@ aside ul {
 }
 
 aside ul li {
-    margin-top: 30px;
+    margin: 30px 0;
+    text-align: center;
 }
 
 aside a, aside ul li a {
     color: #d3d559;
-    text-decoration: none !important;
+    text-decoration: none;
     display: block;
     font-size: 18px;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
+    padding: 8px 0;
 }
 
 aside a:hover, aside ul li a:hover {
     color: #019FFD;
-    transform: scale(1.20);
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }
 
-.feauters {
-    text-align: center;
+.features {
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.feauters h1 {
+.features h1 {
     font-size: 50px;
+    color: #544c84;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
-.feauters p {
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-.alert-warning {
-    width: 400px;
-    margin: 20px auto;
-    text-align: center;
-}
-.alert-success {
-    width: 400px;
-    margin: 20px auto;
-    text-align: center;
+.alert-warning, .alert-success {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .btn-info {
-    display: block;
+    display: inline-block;
     font-size: 18px;
-    width: 400px;
+    width: auto;
+    min-width: 200px;
     margin: 20px auto;
-    text-align: center;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-info:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }

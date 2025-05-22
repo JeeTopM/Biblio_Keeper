@@ -1,0 +1,12 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ article.reader }}{% endblock %}
+{% block content %}
+    <div class="feauters">
+        <h1>{{ article.reader }}</h1>
+        <h1>{{ article.need_book }}</h1>
+        <a href="{% url 'purchase-update' article.id %}" class="btn btn-warning">Изменить запись</a>
+        <a href="{% url 'purchase-delete' article.id %}" class="btn btn-danger">Удалить запись</a>
+
+    </div>
+{% endblock %}
