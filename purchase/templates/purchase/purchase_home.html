@@ -1,20 +1,41 @@
 {% extends 'main/layout.html' %}
 
-{% block title %}Закупка{% endblock %}
+{% block title %}Заявки на книги{% endblock %}
+
 {% block content %}
-    <div class="feauters">
-        <h1>Закупочки</h1>
-        <a href="{% url 'create_purchase' %}" class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить запись</a>
-        {% if purchase %}
-            {% for i in purchase %}
-                <div class="alert alert-warning">
-                    <p><strong>Читатель: </strong>{{ i.reader }}</p>
-                    <p><strong>Книга: </strong>{{ i.need_book }}</p>
-                    <a href="{% url 'purchase-detail' i.id %}" class="btn btn-warning">Подробнее...</a>
-                </div>
-            {% endfor %}
-        {% else %}
-            <h1><strong>Никому ничего не надо, пока...</strong></h1>
-        {% endif %}
+<div class="container mt-4">
+    <h1 class="mb-4">Заявки на книги</h1>
+
+    <!-- Две основные кнопки -->
+    <div class="d-flex gap-3 mb-4">
+        <a href="{% url 'create_purchase' %}" class="btn btn-info">
+            <i class="fa-solid fa-book-medical"></i> Добавить книгу
+        </a>
+        <a href="{% url 'all-books' %}" class="btn btn-info">
+            <i class="fas fa-book-open"></i> Показать все книги
+        </a>
     </div>
+
+    <!-- Основной список заявок -->
+    {% if purchases %}
+        {% for purchase in purchases %}
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ purchase.need_book }}</h5>
+                    <p class="card-text"><strong>Читатель:</strong> {{ purchase.reader }}</p>
+                    <p class="card-text text-muted">
+                        <small>{{ purchase.date|date:"d.m.Y H:i" }}</small>
+                    </p>
+                    <a href="{% url 'purchase-detail' purchase.id %}" class="btn btn-warning">
+                        Подробнее
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-light">
+            Нет активных заявок.
+        </div>
+    {% endif %}
+</div>
 {% endblock %}

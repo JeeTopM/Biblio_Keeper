@@ -11,6 +11,7 @@
             {{ form.book_list }}<br>
             <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">Добавить запись</button>
+            <a href="{% url 'readers_home' %}" class="btn btn-danger">Вернуться назад</a>
         </form>
     </div>
 {% endblock %}

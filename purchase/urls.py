@@ -7,4 +7,5 @@ urlpatterns = [
     path("<int:pk>", views.PurchaseDetailView.as_view(), name="purchase-detail"),
     path("<int:pk>/update", views.PurchaseUpdateView.as_view(), name="purchase-update"),
     path("<int:pk>/delete", views.PurchaseDeleteView.as_view(), name="purchase-delete"),
+    path('all-books/', views.all_books, name='all-books'),
 ]

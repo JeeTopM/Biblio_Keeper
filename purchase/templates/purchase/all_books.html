@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Все книги{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Все запрошенные книги</h1>
+        <a href="{% url 'purchase_home' %}" class="btn btn-danger">Вернуться назад</a>
+    </div>
+
+    <div class="list-group">
+        {% for book in books %}
+            <div class="list-group-item">
+                <h5>{{ book }}</h5>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

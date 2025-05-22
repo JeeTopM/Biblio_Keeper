@@ -10,6 +10,8 @@
             {{ form.need_book }}<br>
             <span>{{ error }}</span>
             <button class="btn btn-success" type="submit">Добавить запись</button>
+            <a href="{% url 'purchase_home' %}" class="btn btn-danger">Вернуться назад</a>
+
         </form>
     </div>
 {% endblock %}

@@ -41,3 +41,15 @@ def create_purchase(request):
     form = ArticlesForm()
     data = {"form": form, "error": error}
     return render(request, "purchase/create_purchase.html", data)
+
+def purchase_home(request):
+    purchases = Articles.objects.all().order_by('-date')
+    return render(request, 'purchase/purchase_home.html', {
+        'purchases': purchases
+    })
+
+def all_books(request):
+    books = Articles.objects.values_list('need_book', flat=True).distinct()
+    return render(request, 'purchase/all_books.html', {
+        'books': books
+    })
