@@ -6,6 +6,8 @@
         <h1>{{ article.reader }}</h1>
         <h1>{{ article.operation }}</h1>
         <h1>{{ article.book_list }}</h1>
+        <a href="{% url 'readers-update' article.id %}" class="btn btn-warning">Изменить запись</a>
+        <a href="{% url 'readers-delete' article.id %}" class="btn btn-danger">Удалить запись</a>
 
     </div>
 {% endblock %}

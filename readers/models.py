@@ -27,6 +27,9 @@ class Articles(models.Model):
     def __str__(self):
         return self.reader
 
+    def get_absolute_url(self):
+        return f'/readers/{self.id}'
+
     class Meta:
         verbose_name = "изменение книговыдачи"
         verbose_name_plural = "изменения книговыдачи"
