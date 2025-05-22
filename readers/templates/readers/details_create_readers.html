@@ -1,0 +1,11 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ article.reader }}{% endblock %}
+{% block content %}
+    <div class="feauters">
+        <h1>{{ article.reader }}</h1>
+        <h1>{{ article.operation }}</h1>
+        <h1>{{ article.book_list }}</h1>
+
+    </div>
+{% endblock %}

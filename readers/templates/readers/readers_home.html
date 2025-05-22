@@ -13,12 +13,14 @@
                         <p>{{ history.operation }}</p>
                         <p>{{ history.book_list }}</p>
                         <p>{{ history.date }}</p>
+                        <a href="{% url 'readers-detail' history.id %}" class="btn btn-warning">Подробнее...</a>
                 {% else %}
                     <div class="alert alert-warning">
                         <h3>{{ history.reader }}</h3>
                         <p>{{ history.operation }}</p>
                         <p>{{ history.book_list }}</p>
                         <p>{{ history.date }}</p>
+                        <a href="{% url 'readers-detail' history.id %}" class="btn btn-warning">Подробнее...</a>
                     </div>
                 {% endif %}
                 </div>
